@@ -186,6 +186,7 @@ def ingest_data():
     df_union2['cluster'] = df_union2['cluster'].astype(int)
     df_union2['cantidad_de_palabras_clave'] = df_union2['cantidad_de_palabras_clave'].astype(int)
     df_union2['porcentaje_de_palabras_clave'] = df_union2['porcentaje_de_palabras_clave'].astype(float)
-    df_union2['principales_palabras_clave'] = df_union2['principales_palabras_clave'].str.replace('.', ',', regex=False)
+    df_union2['principales_palabras_clave'] = df_union2['principales_palabras_clave'].str.replace('.', ',', regex=False).str.rstrip(',')
+
 
     return df_union2
